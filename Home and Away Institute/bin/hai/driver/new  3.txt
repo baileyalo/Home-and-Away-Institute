@@ -1,0 +1,70 @@
+    /* 
+     * To change this template, choose Tools | Templates 
+     * and open the template in the editor. 
+     */  
+      
+    package countupanddown;  
+      
+    import java.awt.*;  
+    import java.awt.event.*;  
+    import javax.swing.*;  
+      
+    /** 
+     * 
+     * @author Room211 
+     */  
+    public class GuiFrameDon extends JFrame implements ActionListener {  
+      
+        Container paper = getContentPane();  
+        FlowLayout flow = new FlowLayout();  
+        JButton btnCount = new JButton ("btnAddTwo");  
+        JButton btnCount2 = new JButton ("btnSubOne");  
+        JTextField txtOutputCount = new JTextField (10);  
+      
+      
+        int x = 0;  
+          
+    public GuiFrameDon(){  
+        this.setTitle("Don's Counting Demo");  
+        this.setSize(400, 300);  
+        this.setLocationRelativeTo(null);  
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
+      
+        paper.setLayout(flow);  
+      
+        addComponents();  
+        registerEventGenerators();  
+        }  
+      
+    public void actionPerformed(ActionEvent ae){  
+       Object source = ae.getSource();  
+      
+        if (source == "btnAddTwo");  
+        {  
+            {  
+                x = x+2;  
+        if(x == 12)System.exit(0);  
+        txtOutputCount.setText(String.valueOf (x));}  
+      
+      
+        if (source == "btnSubOne");  
+            {  
+                x = x;  
+        if(x == 0)System.exit(0);  
+        txtOutputCount.setText(String.valueOf (x));}  
+          
+    }  
+        }  
+      
+        private void addComponents() {  
+            paper.add(btnCount);  
+            paper.add(txtOutputCount);  
+            paper.add(btnCount2);  
+            paper.add(txtOutputCount);  
+        }  
+      
+        private void registerEventGenerators() {  
+            btnCount.addActionListener (this);  
+            btnCount2.addActionListener (this);  
+             
+        }  

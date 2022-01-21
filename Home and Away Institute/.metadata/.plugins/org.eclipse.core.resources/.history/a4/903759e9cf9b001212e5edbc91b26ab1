@@ -1,0 +1,67 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+
+
+
+import java.util.Date;
+
+/**
+ *
+ * @author Team5
+ */
+
+public class StaffRecord extends LoggedInUser {
+
+   
+
+    private String ID_Number;
+    
+    private String Faculty;
+    private String Department;
+    private Date DateEmployed;
+    
+    @Override
+    public String toString() {
+        return "StaffRecord{" + "ID_Number=" + ID_Number + ", Faculty=" + Faculty + ", Department=" + Department + ", DateEmployed=" + DateEmployed + '}';
+    } 
+    public Date getDateEmployed() {
+        return DateEmployed;
+    }
+
+    public void setDateEmployed(Date DateEmployed) {
+        this.DateEmployed = DateEmployed;
+    }
+
+    public String getDepartment() {
+        return Department;
+    }
+
+    public void setDepartment(String Department) {
+        this.Department = Department;
+    }
+
+    public String getFaculty() {
+        return Faculty;
+    }
+
+    public void setFaculty(String Faculty) {
+        this.Faculty = Faculty;
+    }
+
+
+    public String getID_Number() {
+        return ID_Number;
+    }
+
+    public void setID_Number(String ID_Number) {
+        this.ID_Number = ID_Number;
+    }
+
+    
+    
+  
+    
+}

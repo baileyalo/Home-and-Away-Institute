@@ -1,0 +1,37 @@
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import javax.swing.JOptionPane;
+
+import com.cmp3005.db.DatabaseManager;
+
+public class DbTest {
+
+	public static void main(String[] args) {
+		boolean connected = DatabaseManager
+				.connectToDatabase("C:/Users/Antonette Harvey/Documents/year 3/semester 2/java/HomeandAwayInstitutePrototype/hai.accdb");
+		
+		if(connected)
+		{
+			JOptionPane.showMessageDialog(null,"Connected");
+			ResultSet result = DatabaseManager.executeSelectQuery("SELECT * FROM ReferenceMaterial WHERE code=cc AND sequence='250';");
+			try {
+				while(result.next())
+				{
+					System.out.println(result.getString(1));
+					System.out.println(result.getString(2));
+					System.out.println(result.getString(3));
+					System.out.println(result.getString(4));
+					System.out.println(result.getString(5));
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			DatabaseManager.closeDatabaseConnection();
+		}
+		
+	}
+
+}

@@ -1,0 +1,58 @@
+package hai.customgui;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.Color;
+import javax.swing.JTextPane;
+import java.awt.Font;
+import javax.swing.JTextField;
+import javax.swing.JTextArea;
+import javax.swing.JEditorPane;
+import javax.swing.JRadioButton;
+
+public class TESTREPORT extends JFrame {
+
+	private JPanel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					student frame = new student();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public TESTREPORT() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 480, 348);
+		contentPane = new JPanel();
+		contentPane.setBackground(new Color(169, 169, 169));
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JTextPane txtpnStudentRecord = new JTextPane();
+		txtpnStudentRecord.setForeground(new Color(255, 255, 255));
+		txtpnStudentRecord.setBackground(new Color(105, 105, 105));
+		txtpnStudentRecord.setEditable(false);
+		txtpnStudentRecord.setFont(new Font("Sylfaen", Font.BOLD | Font.ITALIC, 41));
+		txtpnStudentRecord.setText("      TEST REPORT");
+		txtpnStudentRecord.setBounds(0, 0, 472, 61);
+		contentPane.add(txtpnStudentRecord);
+	}
+}
