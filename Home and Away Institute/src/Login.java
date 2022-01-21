@@ -74,7 +74,7 @@ if (typea.equalsIgnoreCase("Staff"))
 new CreateStudentRecordGui();
 f.setVisible(false);
 }
-else if (typea.equals("Student"))  
+else if (typea.equals("Student"));
 {
 new StudentMenu(user);//pass the user id
 f.setVisible(false);
@@ -91,7 +91,7 @@ catch (Exception ex)
 }
 });
 }
-public static void main(String[] args)  {
+public static void main(String[] args) {
 new Login();
 }
 }
